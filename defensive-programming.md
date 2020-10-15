@@ -17,8 +17,6 @@ fast](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) principle. What
 defensive programming does is allow a program to continue executing even after
 we have encountered a programming error.
 
----
-
 # Problems with defensive programming
 
 ### Unexpected behaviour
@@ -58,8 +56,6 @@ This can lead to maintaining multiple code paths that are mistakenly believed
 to be different, when in fact they both have the same effect, so one could be
 removed.
 
----
-
 ### Resolution
 
 Enforce valid values at the boundaries to the system and fail fast if invalid
@@ -73,7 +69,6 @@ and rejected unless correct. This allows all other code within the system to
 know that they will receive valid values, which negates the need for any
 defensive programming. 
 
----
 
 # Exceptions
 

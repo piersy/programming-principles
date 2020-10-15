@@ -38,8 +38,6 @@ func build(f *foo) (*bar, error) {
 	}
 ```
 
----
-
 # Problems with neutralized functions
 
 ### Promotes programmng errors
@@ -145,8 +143,6 @@ Callers of `do` have no easy way to detect if `do` actually did anything;
 because it doesn't return a value. Making it easy to assume that `do` took
 action when in fact it did not.
 
----
-
 # Resolution
 
 This problem is easy to resolve: by simply removing the check for a nil the
@@ -155,9 +151,7 @@ are a possibility this forces the caller to put a check around the function at
 a higher level which aids readability and allows the caller to be flexible
 about how they handle those situations.
 
----
-
-## Exceptions
+# Exceptions
 
 In the case of neutralized functions that return a value there are no
 exceptions, building a nil value is pointless.
