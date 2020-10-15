@@ -56,7 +56,7 @@ This can lead to maintaining multiple code paths that are mistakenly believed
 to be different, when in fact they both have the same effect, so one could be
 removed.
 
-### Resolution
+# Resolution
 
 Enforce valid values at the boundaries to the system and fail fast if invalid
 values are encountered in the system.
