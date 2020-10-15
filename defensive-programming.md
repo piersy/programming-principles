@@ -15,7 +15,7 @@ func setHourlyWage(dollars int){
 Defensive programming is actually a violation of the [fail
 fast](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) principle. What
 defensive programming does is allow a program to continue executing even after
-we have encountered a programming error.
+we have encountered an error.
 
 # Problems with defensive programming
 
