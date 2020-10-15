@@ -40,9 +40,9 @@ func build(f *foo) (*bar, error) {
 
 # Problems with neutralized functions
 
-### Promotes programmng errors
+### Promotes programming errors
 
-If f is nil, as we can see from the implementation of `build` and `do`, calling
+If `f` is nil, as we can see from the implementation of `build` and `do`, calling
 `build` or `do` doesn't result in any work, so at the best calling them was
 a waste of resources.
 
@@ -119,9 +119,9 @@ if f != nil {
 
 ```
 
-It is immediately obvious to the reader that if f is nil, we do not call
+It is immediately obvious to the reader that if `f` is nil, we do not call
 `build`. Which allows them to simply eradicate `build` from their mental
-context when considering flows where f is nil. No need to apply mental energy
+context when considering flows where `f` is nil. No need to apply mental energy
 to understanding what build does, how it behaves in different contexts and what
 side effects it might have.
 
