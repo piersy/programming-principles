@@ -38,9 +38,11 @@ func build(f *foo) (*bar, error) {
 	}
 ```
 
-There are several problems with neutralized functions.
+---
 
-## Promotes programmng errors
+# Problems with neutralized functions
+
+### Promotes programmng errors
 
 If f is nil, as we can see from the implementation of `build` and `do`, calling
 `build` or `do` doesn't result in any work, so at the best calling them was
@@ -51,7 +53,7 @@ because nothing useful happens, either we  get a nil returned from `build` or
 nothing happens in the case of `do`. So in fact calling `build` or `do` with
 nil is a programming error. 
 
-## Obscures the problem source
+### Obscures the problem source
 
 In the case of `build`, by returning nil when passed nil, instead of alerting
 the caller to their mistake we are effectively delaying the point at which the
@@ -99,7 +101,7 @@ that rely on the state changes that `do` was meant to enact will fail in
 mysterious ways. And again we have lost the context that would lead us to the
 source of the problem.
 
-# Harms readability
+### Harms readability
 
 Consider this use of `build`:
 ```go
@@ -127,7 +129,7 @@ side effects it might have.
 
 The same reasoning can be applied to `do`.
 
-## Violates SRP
+### Violates SRP
 
 `build` and `do` also violate the "single responsibility principle" because
 they either execute their intended action or do nothing. Having a function that
@@ -143,13 +145,17 @@ Callers of `do` have no easy way to detect if `do` actually did anything;
 because it doesn't return a value. Making it easy to assume that `do` took
 action when in fact it did not.
 
-## Resolution
+---
+
+# Resolution
 
 This problem is easy to resolve: by simply removing the check for a nil the
 functions will panic when called incorrectly. In the case that nil input values
 are a possibility this forces the caller to put a check around the function at
 a higher level which aids readability and allows the caller to be flexible
 about how they handle those situations.
+
+---
 
 ## Exceptions
 
