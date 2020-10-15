@@ -34,8 +34,8 @@ hidden many levels deep.
 
 ### Harms readability
 
-Because defensive programming converts certain values to other values "under
-the hood" it allows there to be multiple ways to perform the same action. 
+Because defensive programming converts certain values to other values *under
+the hood* it allows there to be multiple ways to perform the same action. 
 
 Consider these 2 calls to `setHourlyWage` that result in the same outcome:
 ```go
@@ -49,8 +49,8 @@ two calls to `setHourlyWage` have different effects.
 
 ### Duplication
 
-Because defensive programming converts certain values to other values "under
-the hood" it allows there to be multiple ways to perform the same action. 
+Because defensive programming converts certain values to other values *under
+the hood* it allows there to be multiple ways to perform the same action. 
 
 This can lead to maintaining multiple code paths that are mistakenly believed
 to be different, when in fact they both have the same effect, so one could be
