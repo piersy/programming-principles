@@ -25,7 +25,20 @@ func do(f *foo) error {
 	...
 ```
 
-There are several problems here.
+The condition in a neutralized function does not need to be on a function
+parameter it could also be a check on some global state, which is arguably
+worse, since because the global state is accessible everywhere it's hard to pin
+down what the value will be at runtime.
+E.g:
+```go
+// build builds bar from foo.
+func build(f *foo) (*bar, error) {
+	if !shouldBuild {
+		return nil, nil
+	}
+```
+
+There are several problems with neutralized functions.
 
 ## Promotes programmng errors
 
